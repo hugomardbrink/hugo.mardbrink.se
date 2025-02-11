@@ -1,0 +1,485 @@
+:root {
+    --primary: #F6F6F6;
+    --accent: #201F1B;
+    --light-text: #F6F6F6;
+    --dark-text: #201F1B;
+
+    font-family: "Archivo Black", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+html, body { 
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary);
+    color: var(--dark-text);
+}
+
+.header-breadcrumbs {
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+.header-breadcrumbs-link {
+    color: var(--dark-text);
+    text-decoration: none;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+
+    @media screen and (max-width: 1000px) { 
+        font-size: 0.8rem; 
+    }
+}
+
+.header-breadcrumbs-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.grain-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100000;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 2rem;
+}
+
+.home-padding {
+    margin-top: 5rem;
+
+    @media screen and (max-width: 1000px) { 
+        margin-top: 2rem;  
+    } 
+}
+
+.title-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 1000px) { 
+        margin-bottom: -3rem;  
+    }
+}
+
+.title {
+    font-size: 8rem;
+    font-weight: 700;
+    color: inherit;
+    
+    @media screen and (max-width: 1000px) { 
+        font-size: 12.5vw; 
+    }
+}
+
+.menu-container {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+    width: 100%;
+
+    @media screen and (max-width: 1000px) {
+        margin-top: 7.5rem;
+        gap: 1.5rem;
+        flex-direction: column;
+    }
+}
+
+.menu-item {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: inherit; 
+    cursor: pointer;
+    text-decoration: none; 
+    
+    @media screen and (max-width: 1000px) { 
+        font-size: 1.75rem;  
+    }
+}
+
+.menu-item:hover {
+    text-decoration: underline;
+}
+
+.menu-divider {
+    background-color: var(--dark-text); 
+    width: 0.3rem;
+    height: 2.5rem;
+    
+    @media screen and (max-width: 1000px) { 
+        width: 6rem;
+        height: 0.25rem;
+    }
+}
+
+.project-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 2.5rem;
+
+    @media screen and (max-width: 1000px) { 
+        gap: 0.75rem;
+    }
+}
+
+.project-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 11vw;
+    
+    @media screen and (max-width: 1000px) { 
+        justify-content: center;
+    }
+}
+
+.modmark-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    align-items: start;
+    justify-content: space-evenly;
+    margin-right: 1rem;
+    height: 15rem;
+    width: 22.5rem;
+    border: 0.4rem solid var(--dark-text);
+    box-shadow: 0.5rem 0.5rem 0 0.1rem var(--dark-text);
+    margin-top: 5rem;
+
+    @media screen and (max-width: 1000px) { 
+        display: none;
+    }
+}
+
+.modmark-text {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-left: 0.5rem;
+}
+
+.modmark-icon-box {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -3.5rem;
+    right: -1.75rem;
+    height: 5.5rem;
+    width: 5.5rem;
+    border: 0.4rem solid var(--dark-text);
+    box-shadow: 0.5rem 0.5rem 0 0.1rem var(--dark-text);
+    background-color: var(--primary);
+}
+
+.modmark-mobile-icon-box {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -2.5rem;
+    right: -1.25rem;
+    height: 3.5rem;
+    width: 3.5rem;
+    border: 0.4rem solid var(--dark-text);
+    box-shadow: 0.5rem 0.5rem 0 0.1rem var(--dark-text);
+    background-color: var(--primary);
+    display: none;
+    
+    @media screen and (max-width: 1000px) { 
+        display: flex;
+    }
+}
+
+.modmark-icon {
+    width: 3.75rem;
+    height: 3.75rem;
+    @media screen and (max-width: 1000px) { 
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+.project-info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    align-items: start;
+    justify-content: space-between;
+    padding: 1rem 0;
+    margin-right: 1rem;
+    height: 15rem;
+    width: 28rem;
+    border: 0.4rem solid var(--dark-text);
+    box-shadow: 0.5rem 0.5rem 0 0.1rem var(--dark-text);
+    margin-top: 5rem;
+
+    @media screen and (max-width: 1000px) { 
+        width: 18rem;
+        height: auto;
+        gap: 1rem;
+    }
+}
+
+.project-info-title {
+    margin-left: 1rem;
+    font-size: 2.20rem;
+    font-weight: 700;
+    color: inherit; 
+    
+    @media screen and (max-width: 1000px) { 
+        font-size: 1.4rem;
+    }
+}
+
+.project-info-desc {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    font-family: "Archivo", serif;
+    font-weight: 400;
+    color: inherit; 
+
+    @media screen and (max-width: 1000px) { 
+        font-size: 0.9rem;
+    }
+}
+
+.project-info-link-left {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: inherit; 
+    text-decoration: none;
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-right: 1.75rem;
+    cursor: pointer;
+    
+    &:after {
+        content: ">";
+    }
+    @media screen and (max-width: 1000px) { 
+        font-size: 0.9rem;
+    }
+}
+
+.project-info-link-right {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: inherit; 
+    text-decoration: none;
+    align-self: flex-start;
+    justify-self: flex-end;
+    margin-left: 1.75rem;
+    cursor: pointer;
+    
+    &:before {
+        content: "<";
+    }
+    @media screen and (max-width: 1000px) { 
+        font-size: 1rem;
+        align-self: flex-end;
+        margin-right: 1.75rem;
+        &:after {
+            content: ">";
+        }
+        &:before {
+            content: "";
+        }
+    }
+
+
+}
+
+.project-info-link-right:hover, .project-info-link-left:hover {
+    text-decoration: underline;
+}
+
+.skal-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    align-items: start;
+    justify-content: flex-start;
+    margin-right: 1rem;
+    height: 15rem;
+    width: 22.5rem;
+    border: 0.4rem solid var(--dark-text);
+    box-shadow: 0.5rem 0.5rem 0 0.1rem var(--dark-text);
+    margin-top: 5rem;
+
+    @media screen and (max-width: 1000px) { 
+        display: none;
+    }
+}
+
+.skal-bar {
+    position: absolute;
+    top: 1.5rem;
+    height: 0.4rem;
+    width: 100%;
+    background-color: var(--dark-text);
+    gap: 0.5rem;
+}
+
+.skal-bar-mobile {
+    position: absolute;
+    top: 1rem;
+    height: 0.4rem;
+    width: 100%;
+    background-color: var(--dark-text);
+    gap: 0.5rem;
+    display: none;
+
+    @media screen and (max-width: 1000px) { 
+        display: flex;
+    }
+}
+
+.skal-text {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-left: 0.5rem;
+    margin-top: 2rem;
+    font-variant-ligatures: none;
+}
+
+.skal-link-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.skal-mobile-title-offset {
+    @media screen and (max-width: 1000px) { 
+        margin-top: 1rem;
+    }
+}
+
+.dot-wrapper {
+    position: absolute;
+    top: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0.3rem;
+}
+
+.dot {
+    height: 0.7rem;
+    width:  0.7rem;
+    background-color: var(--dark-text); 
+    border-radius: 50%;
+}
+
+.dot-wrapper-mobile {
+    position: absolute;
+    top: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0.3rem;
+    display: none;
+
+    @media screen and (max-width: 1000px) { 
+        display: flex;
+    }
+}
+
+.dot-mobile {
+    height: 0.5rem;
+    width:  0.5rem;
+    background-color: var(--dark-text); 
+    border-radius: 50%;
+    display: none;
+
+    @media screen and (max-width: 1000px) { 
+        display: flex;
+    }
+}
+
+.dct-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    align-items: start;
+    justify-content: flex-start;
+    margin-right: 1rem;
+    height: 15rem;
+    width: 22.5rem;
+    border: 0.4rem solid var(--dark-text);
+    box-shadow: 0.5rem 0.5rem 0 0.1rem var(--dark-text);
+    margin-top: 5rem;
+
+    @media screen and (max-width: 1000px) { 
+        display: none;
+    }
+}
+
+.dct-satellite {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    height: 6rem;
+}
+
+.dct-earth {
+    position: absolute;
+    bottom: -2.5rem;
+    right: -1.9rem;
+}
+
+.dct-mobile-satellite {
+    position: absolute;
+    bottom: -2.1rem;
+    left: -1.6rem;
+    height: 4rem;
+    display: none;
+
+    @media screen and (max-width: 1000px) { 
+        display: flex;
+    }
+}

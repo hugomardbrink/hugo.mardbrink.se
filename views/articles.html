@@ -1,0 +1,21 @@
+{{ block "articles" . }}
+    {{ if .Page.IsHtmx }}
+        {{ template "breadcrumb" . }}
+        {{ template "articles.content" . }}
+        {{ template "oob.head" .Page }}
+    {{ else }}
+        {{ template "base.start" .}}
+        {{ template "articles.content" . }}
+        {{ template "base.end" .}}
+    {{ end }}
+{{ end }}
+
+
+{{ block "articles.content" . }}
+    <div class="main-container">
+        <div class="title-container">
+            <span class="title">ARTICLES</span>
+        </div>
+    </div>
+{{ end }}
+

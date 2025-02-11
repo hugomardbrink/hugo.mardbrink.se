@@ -1,0 +1,96 @@
+{{ block "projects" . }}
+    {{ if .Page.IsHtmx }}
+        {{ template "breadcrumb" . }}
+        {{ template "projects.content" . }}
+        {{ template "oob.head" .Page }}
+    {{ else }}
+        {{ template "base.start" .}}
+        {{ template "projects.content" . }}
+        {{ template "base.end" .}}
+    {{ end }}
+{{ end }}
+
+
+{{ block "projects.content" . }}
+    <div class="main-container">
+        <div class="project-page">
+            <div class="title-container">
+                <span class="title">PROJECTS</span>
+            </div>
+            {{ template "projects.skal" . }}
+            {{ template "projects.dct" . }}
+            {{ template "projects.modmark" . }}
+            <span class="title"> <br> </span>
+        </div>
+    </div>
+{{ end }}
+
+{{ block "projects.modmark" . }}
+<div class="project-wrapper">
+    <div class="project-info">
+        <div class="modmark-mobile-icon-box">
+            <img src="/resources/modmark.svg" class="modmark-icon" alt="Modmark logo."></img>
+        </div>
+        <span class="project-info-title">ModMark</span>
+        <span class="project-info-desc">A modular markup language built in Rust.
+The language utilises WebAssembly programs for easy package development.</span>
+        <a href="https://modmark.org" target="_blank" rel="noopener norefferer" class="project-info-link-left">Learn more</a>
+    </div>
+
+    <div class="modmark-wrapper">
+        <div class="modmark-icon-box">
+            <img src="/resources/modmark.svg" class="modmark-icon" alt="Modmark logo."></img>
+        </div>
+        <span class="modmark-text">[config]<br>import catalog:prettify</span>
+        <span class="modmark-text"># [prettify](Header)<br>[link](modmark.org)</span>
+    </div>
+</div>
+{{ end }}
+
+{{ block "projects.skal" . }}
+<div class="project-wrapper">
+    <div class="project-info">
+        <div class="dot-wrapper-mobile">
+            <span class="dot-mobile"></span>
+            <span class="dot-mobile"></span>
+            <span class="dot-mobile"></span>
+        </div>
+        <div class="skal-bar-mobile"></div>
+        <span class="project-info-title skal-mobile-title-offset">Skal / Zkal</span>
+        <span class="project-info-desc">Lightweight performant UNIX shell built from scratch in C++. Experimented with more explanatory syntax and custom operators. Also available in Zig as Zkal.</span>
+        <div class="skal-link-row">
+            <a href="https://github.com/hugomardbrink/skal" target="_blank" rel="noopener norefferer" class="project-info-link-left">Skal</a>
+            <a href="https://github.com/hugomardbrink/zkal" target="_blank" rel="noopener norefferer" class="project-info-link-left">Zkal</a>
+        </div>
+    </div>
+    <div class="skal-wrapper">
+        <div class="dot-wrapper">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div class="skal-bar"></div>
+        <span class="skal-text">
+            skal> ls -a |> wc<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;68<br>
+            skal>
+        </span>
+    </div>
+</div>
+{{ end }}
+
+{{ block "projects.dct" . }}
+<div class="project-wrapper">
+    <div class="dct-wrapper">
+        <img src="/resources/satellite.svg" class="dct-satellite" alt="Satellite"></img>
+        <img src="/resources/earth.svg" class="dct-earth" alt="Earth"></img>
+    </div>
+    <div class="project-info">
+        <img src="/resources/mobile-satellite.svg" class="dct-mobile-satellite" alt="Satellite"></img>
+        <span class="project-info-title">Resource optimised DCT-II algorithm</span>
+        <span class="project-info-desc">Co-designed a satellite version of the DCT-II algorithm with RISC-V hardware and C software. Focusing on energy efficiency using vector instructions, cache coherence and parallelism.</span>
+        <a href="https://github.com/hugomardbrink/resource-optimised-DCT" target="_blank" rel="noopener norefferer" class="project-info-link-right">Learn more</a>
+    </div>
+</div>
+{{ end }}
+

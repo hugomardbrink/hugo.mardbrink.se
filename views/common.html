@@ -1,0 +1,64 @@
+{{ block "base.start" . }}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ .Page.Title }}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta id="meta-description" name="description" content="{{ .Page.Description }}">
+        <script src="https://unpkg.com/htmx.org/dist/htmx.min.js">
+        </script>
+
+        <link rel="icon" type="image/png" sizes="16x16" href="resources/icon.svg">
+        <link rel="icon" type="image/png" sizes="32x32" href="resources/icon.svg">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+    <script>
+        const handleFooterLinkClick = (event) => {
+            event.preventDefault(); 
+            window.scrollTo({ top: 0, behavior: 'auto' });
+        }
+    </script>
+    <body>
+        <img src="resources/grain.png" class="grain-bg" alt="Grainy background"/>
+        {{ template "breadcrumb" . }}
+        <div id="page">
+{{ end }}
+
+{{ block "base.end" . }}
+        </div>
+    </body>
+</html>
+{{ end }}
+
+{{ block "oob.head" . }} 
+    <title htmx-oob-swap="true">{{ .Title }}</title>
+    <meta id="meta-description" name="description" content="{{ .Description }}" hx-swap-oob="true">
+{{ end }}
+
+
+{{ block "breadcrumb" . }}
+<div id="breadcrumbs" hx-swap-oob="{{ .Page.IsHtmx }}" class="header-breadcrumbs">
+    {{ range .Page.Breadcrumbs }}
+        {{ if eq .Title "home" }} {{ else }}
+            <span class="header-breadcrumbs-link"> / </span>
+            <a onclick="handleFooterLinkClick(event)" 
+               href="{{ .Route }}" 
+               tabindex="0" 
+               hx-boost="true" 
+               hx-push-url="true" 
+               hx-get="{{ .Route }}" 
+               hx-target="#page" 
+               class="header-breadcrumbs-link">
+                    {{ if eq .Title "" }}  {{ else }} {{ .Title }} {{ end }}
+            </a>
+        {{ end }}
+    {{ end }}
+</div>
+{{ end }}
+

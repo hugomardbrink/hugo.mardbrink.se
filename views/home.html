@@ -1,0 +1,34 @@
+{{ block "home" . }}
+    {{ if .Page.IsHtmx }}
+        {{ template "breadcrumb" . }}
+        {{ template "home.content" . }}
+        {{ template "oob.head" .Page }}
+    {{ else }}
+        {{ template "base.start" .}}
+        {{ template "home.content" . }}
+        {{ template "base.end" .}}
+    {{ end }}
+{{ end }}
+
+
+{{ block "home.content" . }}
+    <div class="main-container">
+    <div class="home-padding"></div>
+        <div class="title-container">
+            <span class="title">HUGO</span>
+            <span class="title">MÅRDBRINK</span>
+        </div>
+        <div class="menu-container">
+            <a href="/projects" class="menu-item">Projects</a>
+            <div class="menu-divider"></div>
+            <a href="https://github.com/hugomardbrink" target="_blank" rel="noopener norefferer" class="menu-item">Github</a>
+            <div class="menu-divider"></div>
+            <a href="https://www.linkedin.com/in/hugomardbrink/" target="_blank" rel="noopener norefferer" class="menu-item">LinkedIn</a>
+            <div class="menu-divider"></div>
+            <a href="/articles" class="menu-item">Articles</a>
+            <div class="menu-divider"></div>
+            <a href="resources/MARDBRINK_HUGO_CV.pdf" download class="menu-item">CV</a>
+        </div>
+    </div>
+{{ end }}
+
