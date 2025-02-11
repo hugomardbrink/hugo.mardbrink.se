@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"database/sql"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -9,7 +8,7 @@ import (
 	"hugo.mardbrink.se/internal/models"
 )
 
-func RegisterRoutes(e *echo.Echo, db *sql.DB) {
+func RegisterRoutes(e *echo.Echo,) {
     e.GET("/", homePageHandler())
     e.GET("/projects", projectsPageHandler())
     e.GET("/articles", articlesPageHandler())

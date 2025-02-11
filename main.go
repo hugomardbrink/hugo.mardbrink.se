@@ -7,7 +7,6 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 
-	"hugo.mardbrink.se/database"
     "hugo.mardbrink.se/internal/handlers"
 )
 
@@ -34,10 +33,7 @@ func main() {
     e.Static("/resources", "resources")
     e.Static("/css", "css")
 
-    db := database.InitDB()
-    defer database.CloseDB(db)
+    handlers.RegisterRoutes(e)
 
-    handlers.RegisterRoutes(e, db)
-
-    e.Logger.Fatal(e.Start(":8080"))
+    e.Logger.Fatal(e.Start("0.0.0.0:8080"))
 }

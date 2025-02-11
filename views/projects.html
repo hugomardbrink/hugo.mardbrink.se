@@ -12,16 +12,12 @@
 
 
 {{ block "projects.content" . }}
-    <div class="main-container">
-        <div class="project-page">
-            <div class="title-container">
-                <span class="title">PROJECTS</span>
-            </div>
-            {{ template "projects.skal" . }}
-            {{ template "projects.dct" . }}
-            {{ template "projects.modmark" . }}
-            <span class="title"> <br> </span>
-        </div>
+    <div class="project-page">
+        <span class="title title-offset">PROJECTS</span>
+        {{ template "projects.skal" . }}
+        {{ template "projects.dct" . }}
+        {{ template "projects.modmark" . }}
+        <span class="title"> <br> </span>
     </div>
 {{ end }}
 
