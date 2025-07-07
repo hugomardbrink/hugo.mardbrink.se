@@ -484,3 +484,32 @@ html, body {
         display: flex;
     }
 }
+
+.msc-car {
+    position: absolute;
+    top: 3rem;
+    width: 101%;
+}
+
+.msc-mobile-car {
+    position: absolute;
+    bottom: -4rem;
+    left: -5rem;
+    height: 6rem;
+    display: none;
+
+    @media screen and (max-width: 1000px) { 
+        display: flex;
+    }
+}
+
+.msc-project-title {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: inherit; 
+    
+    @media screen and (max-width: 1000px) { 
+        font-size: 1.2rem;
+    }
+}

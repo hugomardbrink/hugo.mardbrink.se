@@ -14,6 +14,7 @@
 {{ block "projects.content" . }}
     <div class="project-page">
         <span class="title title-offset">PROJECTS</span>
+        {{ template "projects.msc" . }}
         {{ template "projects.skal" . }}
         {{ template "projects.dct" . }}
         {{ template "projects.modmark" . }}
@@ -86,6 +87,20 @@ The language utilises WebAssembly programs for easy package development.</span>
         <span class="project-info-title">Resource optimised DCT-II algorithm</span>
         <span class="project-info-desc">Co-designed a satellite version of the DCT-II algorithm with RISC-V hardware and C software. Focusing on energy efficiency using vector instructions, cache coherence and parallelism.</span>
         <a href="https://github.com/hugomardbrink/resource-optimised-DCT" target="_blank" rel="noopener norefferer" class="project-info-link-right">Learn more</a>
+    </div>
+</div>
+{{ end }}
+
+{{ block "projects.msc" . }}
+<div class="project-wrapper">
+    <div class="dct-wrapper">
+        <img src="/resources/car.svg" class="msc-car" alt="Car"></img>
+    </div>
+    <div class="project-info">
+        <img src="/resources/mobile-car.svg" class="msc-mobile-car" alt="Car"></img>
+        <span class="msc-project-title">High-performance trajectory planning: A GPU-acceleration performance study</span>
+        <span class="project-info-desc">CUDA accelerated a C++ implementation of a spline-based trajectory planning algorithm. Improving performance by three orders of magnitude.</span>
+        <a href="resources/MARDBRINK_HUGO_MSC.pdf" download class="project-info-link-right">Thesis</a>
     </div>
 </div>
 {{ end }}
